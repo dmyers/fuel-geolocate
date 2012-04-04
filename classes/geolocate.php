@@ -14,7 +14,7 @@ require_once PKGPATH.'geolocate/classes/geoipcity.php';
  
 class Geolocate
 {
-	private static $_gi;
+	protected static $_gi;
 	
 	/**
 	 * get
@@ -46,10 +46,10 @@ class Geolocate
 	 * _geoip_open
 	 * Opens connection to GeoLiteCity.dat
 	 *
-	 * @access  private
+	 * @access  protected
 	 * @return  void
 	 */
-	private static function _geoip_open()
+	protected static function _geoip_open()
 	{
 		static::$_gi = geoip_open(PKGPATH.'geolocate/classes/GeoLiteCity.dat', GEOIP_STANDARD);
 	}
@@ -58,10 +58,10 @@ class Geolocate
 	 * _geoip_close
 	 * Closes connection to GeoLiteCity.dat
 	 *
-	 * @access  private
+	 * @access  protected
 	 * @return  void
 	 */
-	private static function _geoip_close()
+	protected static function _geoip_close()
 	{
 		geoip_close(static::$_gi);
 	}
