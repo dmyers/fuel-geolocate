@@ -39,4 +39,4 @@ $location = Geolocate::forge($ip_address);
 
 In order to keep the package up to date simply run:
 
-	$ git submodule update --recursive fuel/packages/facebook/
+	$ git submodule update --recursive fuel/packages/geolocate/
