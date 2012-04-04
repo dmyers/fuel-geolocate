@@ -15,6 +15,14 @@ require_once PKGPATH.'geolocate/classes/geoipcity.php';
 class Geolocate
 {
 	protected static $_gi;
+
+	/**
+	 * Init, config loading.
+	 */
+	public static function _init()
+	{
+		\Config::load('geolocate', true);
+	}
 	
 	/**
 	 * get
@@ -51,7 +59,7 @@ class Geolocate
 	 */
 	protected static function _geoip_open()
 	{
-		static::$_gi = geoip_open(PKGPATH.'geolocate/classes/GeoLiteCity.dat', GEOIP_STANDARD);
+		static::$_gi = geoip_open(\Config::get('geolocate.path').'GeoLiteCity.dat', GEOIP_STANDARD);
 	}
 	
 	/**
