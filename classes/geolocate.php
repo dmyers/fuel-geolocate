@@ -36,16 +36,9 @@ class Geolocate
 	public static function forge($ip_address, $conn = FALSE)
 	{
 		($conn == FALSE ? static::_geoip_open() : 0);
-		$geoip = array();
-		$record = geoip_record_by_addr(static::$_gi, $ip_address);
-		if(!empty($record))
-		{
-			$geoip = array(
-				'city'		=> $record->city,
-				'region'	=> $record->region,
-				'country'	=> $record->country_code3
-			);
-		}
+
+		$geoip = geoip_record_by_addr(static::$_gi, $ip_address);
+
 		($conn == FALSE ? static::_geoip_close() : 0);
 		return $geoip;
 	}
