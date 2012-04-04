@@ -26,20 +26,25 @@ class Geolocate
 	
 	/**
 	 * forge
-	 * Uses GeoLiteCity.dat and geoip helpers to get Geo location information for the IP address passed
+	 * Uses GeoLiteCity.dat and geoip helpers to get Geolocation information for the IP address passed
 	 *
 	 * @access  public
 	 * @param   string    $ip_address     IP Address
-	 * @param   boolean   $conn           TRUE or FALSE - whether a connection to GeoLiteCity is already open or not
+	 * @param   boolean   $conn           whether a connection to GeoLiteCity is already open or not
 	 * @return  array
 	 */
-	public static function forge($ip_address, $conn = FALSE)
+	public static function forge($ip_address, $conn = false)
 	{
-		($conn == FALSE ? static::_geoip_open() : 0);
-
+		if (!$conn) {
+			static::_geoip_open();
+		}
+		
 		$geoip = geoip_record_by_addr(static::$_gi, $ip_address);
 
-		($conn == FALSE ? static::_geoip_close() : 0);
+		if (!$conn) {
+			static::_geoip_close();
+		}
+
 		return $geoip;
 	}
 	
