@@ -1,16 +1,42 @@
-# Geolocate
+# Fuel Geolocate Package
 
-Geolocate integrates MaxMind's free GeoLiteCity.dat geoip database and PHP API classes to allow your fuel application to perform IP based geolocation lookups
+A Fuel package for integrating [MaxMind](http://maxmind.com)'s geoip database.
 
-# Download / Install
+## Installation
 
-To install this package, create a folder called geolocate in your packages directory and drop the files from this repository in it. Then you need to download and extract the GeoLiteCity.dat database into the classes folder.
-	GeoLiteCity Download: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+### Git Submodule
 
-# Usage
+If you are installing this as a submodule (recommended) in your git repo root, run this command:
 
-Fuel::add_package('geolocate');
+	$ git submodule add git://github.com/dmyers/fuel-geolocate.git fuel/packages/geolocate
 
-$location = Geolocate::get('63.141.243.160');
+Then you you need to initialize and update the submodule:
 
-// $location array contains elements 'city', 'region', and 'country'
+	$ git submodule update --init --recursive fuel/packages/geolocate/
+
+### Download
+
+Alternatively you can download it and extract it into `fuel/packages/geolocate/`.
+
+## Setup
+
+### Run task
+
+Run the oil task which will download and extract the GeoLiteCity.dat file into the vendor folder.
+
+	$ php oil r geolocate
+
+### Download
+
+Alternatively you can [manually download the GeoLiteCity.dat database](http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz) and extract into the vendor folder.
+
+## Usage
+
+```php
+$location = Geolocate::forge($ip_address);
+```
+## Updates
+
+In order to keep the package up to date simply run:
+
+	$ git submodule update --recursive fuel/packages/geolocate/
