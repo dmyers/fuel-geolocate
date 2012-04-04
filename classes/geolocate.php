@@ -52,7 +52,13 @@ class Geolocate
 	 */
 	protected static function _geoip_open()
 	{
-		static::$_gi = geoip_open(\Config::get('geolocate.path').'GeoLiteCity.dat', GEOIP_STANDARD);
+		$database = \Config::get('geolocate.path').'GeoLiteCity.dat';
+
+		if (!file_exists($database)) {
+			throw new \Fuel_Exception('Missing GeoLiteCity database file');
+		}
+		
+		static::$_gi = geoip_open($database, GEOIP_STANDARD);
 	}
 	
 	/**
