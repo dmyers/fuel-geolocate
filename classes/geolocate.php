@@ -60,7 +60,7 @@ class Geolocate
 		$database = \Config::get('geolocate.path').'GeoLiteCity.dat';
 
 		if (!file_exists($database)) {
-			throw new \Fuel_Exception('Missing GeoLiteCity database file');
+			throw new \FuelException('Missing GeoLiteCity database file');
 		}
 		
 		static::$_gi = geoip_open($database, GEOIP_STANDARD);
