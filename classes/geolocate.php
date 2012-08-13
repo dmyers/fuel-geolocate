@@ -33,10 +33,14 @@ class Geolocate
 	 * @param   boolean   $conn           whether a connection to GeoLiteCity is already open or not
 	 * @return  array
 	 */
-	public static function forge($ip_address, $conn = false)
+	public static function forge($ip_address = null, $conn = false)
 	{
 		if (!$conn) {
 			static::_geoip_open();
+		}
+
+		if (empty($_ip_address)) {
+			$ip_address = \Config::get('geolocate.fake_ip', \Input::real_ip());
 		}
 		
 		$geoip = geoip_record_by_addr(static::$_gi, $ip_address);
