@@ -11,8 +11,10 @@ class Geolocate
 
 		\Cli::write('Downloading database', 'green');
 
+		$command = "curl -s http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz > $database_path.gz";
+
 		// Download the database
-		exec('cd '.$path.' && wget -q http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz');
+		exec($command);
 
 		// Delete the old database
 		if (file_exists($database_path)) {
