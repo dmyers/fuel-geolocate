@@ -10,7 +10,7 @@ namespace Geolocate;
  * @author		Bryce Johnston
  */
 
-require_once PKGPATH.'geolocate/classes/geoipcity.php';
+require_once PKGPATH.'geolocate'.DS.'classes'.DS.'geoipcity.php';
  
 class Geolocate
 {

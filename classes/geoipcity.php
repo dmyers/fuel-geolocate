@@ -30,8 +30,8 @@
 
 define("FULL_RECORD_LENGTH",50);
 
-require_once(PKGPATH.'geolocate/classes/geoip.php');
-require_once(PKGPATH.'geolocate/classes/geoipregionvars.php');
+require_once PKGPATH.'geolocate'.DS.'classes'.DS.'geoip.php';
+require_once PKGPATH.'geolocate'.DS.'classes'.DS.'geoipregionvars.php';
 
 class geoiprecord {
   var $country_code;
