@@ -1,5 +1,5 @@
 <?php
 
 return array(
-	'path' => PKGPATH.'geolocate/vendor/',
+	'path' => APPPATH.'vendor/',
 );
