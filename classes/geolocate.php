@@ -39,7 +39,7 @@ class Geolocate
 			static::_geoip_open();
 		}
 
-		if (empty($_ip_address)) {
+		if (empty($ip_address)) {
 			$ip_address = \Config::get('geolocate.fake_ip', \Input::real_ip());
 		}
 		
