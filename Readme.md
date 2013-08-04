@@ -4,6 +4,10 @@ A Fuel package for integrating [MaxMind](http://maxmind.com)'s geoip database.
 
 ## Installation
 
+Simply add the following to your composer.json require block:
+
+	'geoip/geoip'
+
 ### Git Submodule
 
 If you are installing this as a submodule (recommended) in your git repo root, run this command:
