@@ -10,8 +10,6 @@ namespace Geolocate;
  * @author		Bryce Johnston
  */
 
-require_once VENDORPATH.'geoip'.DS'geoip'.DS.'geoipcity.inc';
-
 class Geolocate
 {
 	protected static $_gi;
