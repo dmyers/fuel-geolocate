@@ -10,8 +10,6 @@ namespace Geolocate;
  * @author		Bryce Johnston
  */
 
-require_once PKGPATH.'geolocate'.DS.'vendor'.DS.'geoip-sdk'.DS.'geoipcity.inc';
- 
 class Geolocate
 {
 	protected static $_gi;
