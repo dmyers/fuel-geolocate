@@ -12,7 +12,7 @@ Simply add the following to your composer.json require block:
 
 If you are installing this as a submodule (recommended) in your git repo root, run this command:
 
-	$ git submodule add git://github.com/wingdspur/fuel-geolocate.git fuel/packages/geolocate
+	$ git submodule add git://github.com/dmyers/fuel-geolocate.git fuel/packages/geolocate
 
 Then you you need to initialize and update the submodule:
 
