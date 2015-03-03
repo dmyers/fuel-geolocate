@@ -79,7 +79,4 @@ class Geolocate
 	{
 		geoip_close(static::$_gi);
 	}
-
 }
-
-/* End of file geolocate.php */
