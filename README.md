@@ -2,6 +2,11 @@
 
 A Fuel package for integrating [MaxMind](http://maxmind.com)'s geoip database.
 
+## About
+* Version: 1.0.0
+* License: MIT License
+* Author: Bryce Johnston
+
 ## Installation
 
 Simply add the following to your composer.json require block:
